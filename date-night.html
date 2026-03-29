@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دائِماً، لكِ ✦</title>
+    <link rel="stylesheet" href="date-night.css">
+</head>
+
+<body>
+
+    <div id="sky"></div>
+    <canvas id="rain"></canvas>
+
+    <!-- string lights -->
+    <svg class="lights" viewBox="0 0 1000 70" preserveAspectRatio="none">
+  <path d="M0,15 Q125,42 250,18 Q375,44 500,20 Q625,44 750,18 Q875,42 1000,20"
+        fill="none" stroke="rgba(255,150,210,.35)" stroke-width="1.2"/>
+</svg>
+
+    <!-- rainy window -->
+    <div class="win">
+        <div class="wch"></div>
+        <div class="wcv"></div>
+        <div class="wd" style="left:14%;height:18px;--wt:.7s;--wtd:.0s;"></div>
+        <div class="wd" style="left:28%;height:22px;--wt:.9s;--wtd:.2s;"></div>
+        <div class="wd" style="left:44%;height:16px;--wt:.65s;--wtd:.1s;"></div>
+        <div class="wd" style="left:60%;height:20px;--wt:.8s;--wtd:.35s;"></div>
+        <div class="wd" style="left:74%;height:15px;--wt:.72s;--wtd:.18s;"></div>
+        <div class="wd" style="left:86%;height:19px;--wt:.75s;--wtd:.42s;"></div>
+        <div class="wd" style="left:38%;height:17px;--wt:.68s;--wtd:.55s;"></div>
+    </div>
+
+    <div class="tbl"></div>
+
+    <!-- TROPHY LEFT (gold) -->
+    <div class="trophy-wrap trophy-left">
+        <div class="t-star">✦</div>
+        <div class="t-star">🌸</div>
+        <div class="t-star">★</div>
+        <svg width="52" height="68" viewBox="0 0 52 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tg1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#ffe08a"/>
+        <stop offset="45%"  stop-color="#f0c060"/>
+        <stop offset="100%" stop-color="#c88820"/>
+      </linearGradient>
+      <linearGradient id="tg1h" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+        <stop offset="50%"  stop-color="white" stop-opacity=".72"/>
+        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+      </linearGradient>
+      <clipPath id="cup1clip">
+        <path d="M12,6 Q8,28 10,36 Q16,46 26,46 Q36,46 42,36 Q44,28 40,6 Z"/>
+      </clipPath>
+      <radialGradient id="tglow1" cx="50%" cy="50%">
+        <stop offset="0%"   stop-color="#f0c060" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#f0c060" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <ellipse class="t-glow" cx="26" cy="62" rx="14" ry="5" fill="url(#tglow1)"/>
+    <rect x="22" y="46" width="8" height="12" rx="2" fill="url(#tg1)"/>
+    <rect x="14" y="57" width="24" height="6" rx="3" fill="url(#tg1)"/>
+    <rect x="11" y="61" width="30" height="4" rx="2" fill="#c88820" opacity=".6"/>
+    <path d="M12,6 Q8,28 10,36 Q16,46 26,46 Q36,46 42,36 Q44,28 40,6 Z" fill="url(#tg1)"/>
+    <path d="M14,8 Q11,28 13,35 Q18,44 26,44" stroke="rgba(0,0,0,.12)" stroke-width="1.5" fill="none"/>
+    <path d="M12,12 Q4,14 4,24 Q4,32 12,32"    stroke="url(#tg1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M40,12 Q48,14 48,24 Q48,32 40,32"  stroke="url(#tg1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect class="t-shine" x="-20" y="0" width="16" height="50" fill="url(#tg1h)" clip-path="url(#cup1clip)" opacity=".8"/>
+    <text x="20" y="30" font-size="12" fill="white" opacity=".88" font-family="serif">★</text>
+    <rect x="10" y="5" width="32" height="4" rx="2" fill="#ffe08a" opacity=".7"/>
+  </svg>
+    </div>
+
+    <!-- TROPHY RIGHT (pink) -->
+    <div class="trophy-wrap trophy-right">
+        <div class="t-star">✦</div>
+        <div class="t-star">💕</div>
+        <div class="t-star">✧</div>
+        <svg width="52" height="68" viewBox="0 0 52 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tg2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#ffc0e0"/>
+        <stop offset="45%"  stop-color="#f050a8"/>
+        <stop offset="100%" stop-color="#a02060"/>
+      </linearGradient>
+      <linearGradient id="tg2h" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+        <stop offset="50%"  stop-color="white" stop-opacity=".68"/>
+        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+      </linearGradient>
+      <clipPath id="cup2clip">
+        <path d="M12,6 Q8,28 10,36 Q16,46 26,46 Q36,46 42,36 Q44,28 40,6 Z"/>
+      </clipPath>
+      <radialGradient id="tglow2" cx="50%" cy="50%">
+        <stop offset="0%"   stop-color="#ff80c0" stop-opacity=".6"/>
+        <stop offset="100%" stop-color="#ff80c0" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <ellipse class="t-glow" cx="26" cy="62" rx="14" ry="5" fill="url(#tglow2)"/>
+    <rect x="22" y="46" width="8" height="12" rx="2" fill="url(#tg2)"/>
+    <rect x="14" y="57" width="24" height="6" rx="3" fill="url(#tg2)"/>
+    <rect x="11" y="61" width="30" height="4" rx="2" fill="#a02060" opacity=".6"/>
+    <path d="M12,6 Q8,28 10,36 Q16,46 26,46 Q36,46 42,36 Q44,28 40,6 Z" fill="url(#tg2)"/>
+    <path d="M14,8 Q11,28 13,35 Q18,44 26,44" stroke="rgba(0,0,0,.12)" stroke-width="1.5" fill="none"/>
+    <path d="M12,12 Q4,14 4,24 Q4,32 12,32"    stroke="url(#tg2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M40,12 Q48,14 48,24 Q48,32 40,32"  stroke="url(#tg2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect class="t-shine" x="-20" y="0" width="16" height="50" fill="url(#tg2h)" clip-path="url(#cup2clip)" opacity=".8"/>
+    <text x="20" y="30" font-size="12" fill="white" opacity=".88" font-family="serif">♡</text>
+    <rect x="10" y="5" width="32" height="4" rx="2" fill="#ffc0e0" opacity=".7"/>
+  </svg>
+    </div>
+
+    <!-- RAGDOLL CAT -->
+    <div class="cat-ragdoll">
+        <svg width="72" height="82" viewBox="0 0 72 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="36" cy="60" rx="22" ry="18" fill="#f0ece8" opacity=".95"/>
+    <ellipse cx="26" cy="68" rx="8"  ry="6"  fill="#c8a8a0" opacity=".55"/>
+    <ellipse cx="46" cy="68" rx="8"  ry="6"  fill="#c8a8a0" opacity=".55"/>
+    <ellipse cx="36" cy="34" rx="18" ry="16" fill="#f5f0ee" opacity=".95"/>
+    <polygon points="19,22 13,6 27,18"  fill="#d8c8c0"/>
+    <polygon points="53,22 59,6 45,18"  fill="#d8c8c0"/>
+    <polygon points="19,20 15,10 25,18" fill="#ffd0d0" opacity=".8"/>
+    <polygon points="53,20 57,10 47,18" fill="#ffd0d0" opacity=".8"/>
+    <ellipse cx="36" cy="34" rx="11" ry="10" fill="#e0d0cc" opacity=".35"/>
+    <ellipse cx="29" cy="32" rx="4.5" ry="5"   fill="#1a3070"/>
+    <ellipse cx="43" cy="32" rx="4.5" ry="5"   fill="#1a3070"/>
+    <ellipse cx="29" cy="32" rx="2.8" ry="3.2" fill="#2a50c8" opacity=".8"/>
+    <ellipse cx="43" cy="32" rx="2.8" ry="3.2" fill="#2a50c8" opacity=".8"/>
+    <circle  cx="30.5" cy="30" r="1.8" fill="white" opacity=".95"/>
+    <circle  cx="44.5" cy="30" r="1.8" fill="white" opacity=".95"/>
+    <ellipse cx="29" cy="32.5" rx="1.4" ry="2" fill="#0a0820"/>
+    <ellipse cx="43" cy="32.5" rx="1.4" ry="2" fill="#0a0820"/>
+    <text x="27" y="34" font-size="4" fill="white" opacity=".7" font-family="serif">✦</text>
+    <text x="41" y="34" font-size="4" fill="white" opacity=".7" font-family="serif">✦</text>
+    <ellipse cx="36" cy="38" rx="2" ry="1.5" fill="#f5a0b8"/>
+    <path d="M33,40 Q36,43 39,40" stroke="#c06888" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <line x1="14" y1="37"  x2="30" y2="39"   stroke="rgba(200,180,220,.55)" stroke-width=".8"/>
+    <line x1="14" y1="40"  x2="30" y2="40.5" stroke="rgba(200,180,220,.55)" stroke-width=".8"/>
+    <line x1="42" y1="39"  x2="58" y2="37"   stroke="rgba(200,180,220,.55)" stroke-width=".8"/>
+    <line x1="42" y1="40.5" x2="58" y2="40"  stroke="rgba(200,180,220,.55)" stroke-width=".8"/>
+    <path d="M16,63 Q2,52 6,40 Q8,33 14,37"  stroke="#d8c8c0" stroke-width="6" fill="none" stroke-linecap="round" opacity=".9"/>
+    <path d="M14,37 Q12,34 14,33"             stroke="#c0a8a0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+    <ellipse cx="23" cy="75" rx="7" ry="4" fill="#f0ece8" opacity=".9"/>
+    <ellipse cx="49" cy="75" rx="7" ry="4" fill="#f0ece8" opacity=".9"/>
+    <line x1="20" y1="75" x2="20" y2="78"   stroke="#d8c8c0" stroke-width=".8" opacity=".6"/>
+    <line x1="23" y1="75" x2="23" y2="78.5" stroke="#d8c8c0" stroke-width=".8" opacity=".6"/>
+    <line x1="26" y1="75" x2="26" y2="78"   stroke="#d8c8c0" stroke-width=".8" opacity=".6"/>
+    <text x="2"  y="14" font-size="9" fill="#ffb0d8" opacity=".7">✦</text>
+    <text x="60" y="11" font-size="7" fill="#c8d0f8" opacity=".65">★</text>
+    <text x="1"  y="30" font-size="6" fill="#f0c0e8" opacity=".5">✧</text>
+  </svg>
+    </div>
+
+    <!-- ORANGE CAT -->
+    <div class="cat">
+        <svg width="72" height="82" viewBox="0 0 72 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="36" cy="60" rx="22" ry="18" fill="#e8803a" opacity=".92"/>
+    <ellipse cx="36" cy="34" rx="18" ry="16" fill="#e8803a" opacity=".92"/>
+    <polygon points="19,22 13,6 27,18"  fill="#e8803a"/>
+    <polygon points="53,22 59,6 45,18"  fill="#e8803a"/>
+    <polygon points="19,20 15,10 25,18" fill="#ffcca0" opacity=".8"/>
+    <polygon points="53,20 57,10 47,18" fill="#ffcca0" opacity=".8"/>
+    <ellipse cx="29" cy="33" rx="4"   ry="4.5" fill="#1e0832"/>
+    <ellipse cx="43" cy="33" rx="4"   ry="4.5" fill="#1e0832"/>
+    <circle  cx="30.5" cy="31.5" r="1.5" fill="white" opacity=".9"/>
+    <circle  cx="44.5" cy="31.5" r="1.5" fill="white" opacity=".9"/>
+    <text x="27.5" y="35.5" font-size="4.5" fill="white" opacity=".8" font-family="serif">✦</text>
+    <text x="41.5" y="35.5" font-size="4.5" fill="white" opacity=".8" font-family="serif">✦</text>
+    <ellipse cx="36" cy="39" rx="2" ry="1.5" fill="#ffb0d0"/>
+    <path d="M33,41.5 Q36,44.5 39,41.5" stroke="#c04060" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <line x1="14" y1="38"  x2="30" y2="40"   stroke="rgba(255,255,255,.45)" stroke-width=".8"/>
+    <line x1="14" y1="41"  x2="30" y2="41.5" stroke="rgba(255,255,255,.45)" stroke-width=".8"/>
+    <line x1="42" y1="40"  x2="58" y2="38"   stroke="rgba(255,255,255,.45)" stroke-width=".8"/>
+    <line x1="42" y1="41.5" x2="58" y2="41"  stroke="rgba(255,255,255,.45)" stroke-width=".8"/>
+    <path d="M56,63 Q72,50 68,40 Q66,33 60,37" stroke="#e8803a" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+    <ellipse cx="23" cy="75" rx="7" ry="4" fill="#e8803a" opacity=".82"/>
+    <ellipse cx="49" cy="75" rx="7" ry="4" fill="#e8803a" opacity=".82"/>
+    <text x="3"  y="14" font-size="10" fill="#f0c060" opacity=".75">✦</text>
+    <text x="59" y="11" font-size="8"  fill="#ffb8d8" opacity=".65">★</text>
+    <text x="1"  y="30" font-size="7"  fill="#f0a8e8" opacity=".5">✧</text>
+  </svg>
+    </div>
+
+    <div class="yarn">🧶</div>
+    <div class="brush">🖌️</div>
+
+    <!-- glasses -->
+    <div class="glass" style="left:35%">
+        <div class="gcup"></div>
+        <div class="gstem"></div>
+        <div class="gbase"></div>
+    </div>
+    <div class="glass" style="right:35%">
+        <div class="gcup"></div>
+        <div class="gstem"></div>
+        <div class="gbase"></div>
+    </div>
+
+    <!-- candle -->
+    <div class="cgrp">
+        <div class="cglow"></div>
+        <div class="cbody">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <!-- envelope -->
+    <div id="ewrap">
+        <div id="env" onclick="openEnv()">
+            <div class="ebody"></div>
+            <div class="eflap">
+                <div class="eflap-inner"></div>
+            </div>
+            <div class="eseal">💌</div>
+        </div>
+        <div class="thint">✦ open me ✦</div>
+    </div>
+
+    <!-- card -->
+    <div id="cover">
+        <div class="book">
+            <button class="closex" onclick="closeCard()">✕</button>
+
+            <div class="page active" id="p1">
+                <div class="pnum">01 / 06</div>
+                <div class="corner">💌</div>
+                <div class="plabel">عزيزتي لارا</div>
+                <div class="ptitle">اتمنى چنا بوضع احسن من هذا</div>
+                <div class="pbody">
+                    من اول ماتعرفت عليج<br> چنتي مميزة بين الكل<br>صفاتج وتفاصيلج مميزة وحلوة<br><br>
+                    <em>للاسف مالتقينا.</em>
+                </div>
+            </div>
+
+            <div class="page" id="p2">
+                <div class="pnum">02 / 06</div>
+                <div class="corner">🌿</div>
+                <div class="plabel">لاحظت بيج كل شي حلو</div>
+                <div class="ptitle">شلون تعيشين حياتج</div>
+                <div class="pbody">
+                    من شجاعتج باختيارج شي صعب لكن يريح راسج للمدى البعيد
+                    <em>وبصراحة،</em><br>فخور بهذا الخيار واسعدني مثل ما اسعدج ياريت اكون موجود باليوم الي تتخرجين بيه واشوفج لابسة الروب وطالعة من القسم الي انتي اختاريتيه رغم كلشي.
+                    <br>
+                </div>
+            </div>
+
+            <div class="page" id="p3">
+                <div class="pnum">03 / 06</div>
+                <div class="corner">✦</div>
+                <div class="plabel">تصرفاتج الكويت</div>
+                <div class="ptitle">شلون تحجين وصوتج</div>
+                <div class="pbody">
+                    احب من تحاجين ميشو وفستق يطلع صوت ام حنين، وهالشي يخليني اثق حتكونين <em> ام تخبل</em> <br><br> وطبخج الي بس من الصور مبين طيب، ف محظوظين الي راح يتذوقوه بالواقع, بكلشي موهوبة.
+                </div>
+            </div>
+
+            <div class="page" id="p4">
+                <div class="pnum">04 / 06</div>
+                <div class="corner">🌸</div>
+                <div class="plabel">معجب</div>
+                <div class="ptitle">بكل شي تسوينه</div>
+                <div class="pbody">
+                    فنج، رسمج الي للان محتفظ بيهن وامدح التفاصيل الي ترسمهن ايديج حياكتج اللطيفة، كل مرة تشوفيني تطورج اكون متعجب اكثر من الي صرتيه عن اول مرة عرفت بيها انتي تحيكين، شي كلش حلو يستاهل المدح تصاميمج بدعوات الزفاف والكرافك الي واثق حيكون عندج مستقبل حلو بيه
+                    كتابتج الي ماشفتها والي ضايج لان وكفتي وماكملتي تكتبين، اتمنى ترجعين واشوفج تكتبين كتاب باسمج اشتريه من المكتبة واكون سعيد وفخور ان جنت صديق الج
+                </div>
+            </div>
+
+            <div class="page" id="p5">
+                <div class="pnum">05 / 06</div>
+                <div class="corner">🌧️</div>
+                <div class="plabel">شعر منكت كتابتي</div>
+                <div class="ptitle">وَلَيْلُ الشَّوْقِ</div>
+                <div class="pbody">
+                    رَأَيْتُكِ مَرَّةً، فَاتَّقَدَتْ أَضْلُعِي<br> كَمَا اتَّقَدَ المِصْبَاحُ فِي غُرْفَةِ الشِّتَا<br> تَمُرِّينَ بَيْنَ النَّاسِ كَالنَّهْرِ هَادِئًا<br> وَفِي صَدْرِيَ المَحْرُومِ تَكْسِرُ مَوْجَةً<br> أُكَلِّمُكِ فِي سِرِّي وَأَصْمُتُ
+                    أَمَامَكِ
+                    <br> كَقَيْسٍ رَأَى لَيْلَاهُ فَانْقَطَعَتْ خُطَا<br> لَيَالِيَّ كَذِب وَالحَقِيقَةُ وَاحِدَةٌ<br> أَنَا أَحْلُمُ وَحْدِي، وَأَنْتِ نِمْتِ هَنَا<br> أُحِبُّكِ كَمَنْ يُحِبُّ ضَوْءَ النَّافِذَةِ<br> يَدْفَؤُهُ وَلَا يَمْلِكُهُ لكن رَجى<br>                    وَمَا قُلْتُ شَيْئًا، خِفْتُ أَكْسِرَ لَحْظَةً<br> جَمِيلَةً كَلَيْلَةِ الثَّلْجِ لَمَّا هَدَا
+                </div>
+            </div>
+
+            <div class="page" id="p6">
+                <div class="pnum">06 / 06</div>
+                <div class="corner">🌙</div>
+                <div class="plabel">اخر شي</div>
+                <div class="ptitle">احب اذكرج</div>
+                <div class="pbody">
+                    تهتمين بنفسج، وتتذكرين دائماً وابدا، اهم شخص بحياتج هي انتي، راحة راسج وهدوء بالج هو اهم من اي شخص ثاني. اخذي قراراتج ع هذا الاساس. ودوم تذكري ان اكو شخص حبج حب حقيقي بدون اي شي بالمقابل فقط وجودج، ف امشي بحياتج وانتي براسج هاي الفكرة وفكري بيها باختياراتج
+                    الجاية، تستاهلين الاحسن ، ف حصلي الاحسن وخلي لارا المستقبلية تشكرج. لارا المتسقبلية الي عندي ثقة جبيرة حتطلع فد شي
+                    <em> لان حرفيا كل مواهبج اذا كملتي بيها حتوصلين لاعلى المراتب</em><br> ان كان تصيرين مبرمجة، حائكة، رسامة او كاتبة، اي شي براسج حيكون شي عظيم، انتظر انجازاتج من بعيد، اوصلي للنجوم.
+
+                </div>
+                <div class="sign">— دائِماً، لكِ ♡</div>
+            </div>
+
+            <div class="cnav">
+                <button class="nb" id="bprev" onclick="go(-1)" disabled>← back</button>
+                <div class="dots" id="dots"></div>
+                <button class="nb" id="bnext" onclick="go(1)">next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ── STARS ── */
+        const sky = document.getElementById('sky');
+        const starPalette = [{
+            sc: '#ffffff',
+            sc2: 'rgba(255,255,255,.25)',
+            gl: '5px'
+        }, {
+            sc: '#ffd0e8',
+            sc2: 'rgba(255,160,210,.35)',
+            gl: '6px'
+        }, {
+            sc: '#ffb0d8',
+            sc2: 'rgba(255,140,200,.3)',
+            gl: '5px'
+        }, {
+            sc: '#ff90c8',
+            sc2: 'rgba(255,120,190,.25)',
+            gl: '4px'
+        }, {
+            sc: '#f8c0da',
+            sc2: 'rgba(248,160,210,.3)',
+            gl: '5px'
+        }, {
+            sc: '#ffc8e8',
+            sc2: 'rgba(255,160,220,.2)',
+            gl: '4px'
+        }, ];
+        for (let i = 0; i < 200; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const sz = .8 + Math.random() * 3.2;
+            const p = starPalette[Math.floor(Math.random() * starPalette.length)];
+            s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*64}%;--sz:${sz}px;--d:${1.5+Math.random()*5}s;--dl:${Math.random()*7}s;--mo:${.1+Math.random()*.3};--sc:${p.sc};--sc2:${p.sc2};--gl:${p.gl};`;
+            sky.appendChild(s);
+        }
+        for (let i = 0; i < 3; i++) {
+            const sh = document.createElement('div');
+            sh.className = 'shoot';
+            sh.style.cssText = `left:${10+Math.random()*55}%;top:${5+Math.random()*28}%;--sd:${5+Math.random()*6}s;--sdl:${Math.random()*9}s;`;
+            sky.appendChild(sh);
+        }
+
+        /* ── STRING LIGHTS ── */
+        const svgEl = document.querySelector('svg.lights');
+        const bulbData = ['✦', '★', '✧', '🌸', '✦', '💕', '★', '✦', '✧', '💗', '✦', '★', '✧', '✦', '🌸', '★', '✦', '✧', '✦'];
+        for (let i = 0; i < 19; i++) {
+            const t = i / 18;
+            const x = t * 1000;
+            const y = 34 + Math.sin(t * Math.PI * 4 + 0.5) * 10;
+            const b = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            b.setAttribute('x', x);
+            b.setAttribute('y', y);
+            b.setAttribute('text-anchor', 'middle');
+            b.setAttribute('font-size', '13');
+            const cols = ['#f0c060', '#ff60b0', '#ffb0d8', '#ff80c8'];
+            b.setAttribute('fill', cols[i % 4]);
+            b.setAttribute('opacity', '.88');
+            b.style.animation = `twinkle ${1.5+Math.random()*2}s ease-in-out infinite ${Math.random()*2}s`;
+            b.textContent = bulbData[i % bulbData.length];
+            svgEl.appendChild(b);
+        }
+
+        /* ── RAIN ── */
+        const canvas = document.getElementById('rain');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        let drops = [];
+        for (let i = 0; i < 140; i++) {
+            drops.push({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                len: 12 + Math.random() * 18,
+                spd: 8 + Math.random() * 10,
+                op: .2 + Math.random() * .45,
+                w: .5 + Math.random() * .8
+            });
+        }
+        (function drawRain() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drops.forEach(d => {
+                ctx.beginPath();
+                ctx.moveTo(d.x, d.y);
+                ctx.lineTo(d.x - 1, d.y + d.len);
+                ctx.strokeStyle = `rgba(255,160,210,${d.op})`;
+                ctx.lineWidth = d.w;
+                ctx.stroke();
+                d.y += d.spd;
+                d.x -= .5;
+                if (d.y > canvas.height) {
+                    d.y = -d.len;
+                    d.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(drawRain);
+        })();
+
+        /* ── CARD LOGIC ── */
+        let cur_page = 1;
+        const total = 6;
+        const dotsEl = document.getElementById('dots');
+        for (let i = 1; i <= total; i++) {
+            const d = document.createElement('div');
+            d.className = 'dot' + (i === 1 ? ' on' : '');
+            d.id = 'd' + i;
+            dotsEl.appendChild(d);
+        }
+
+        function openEnv() {
+            const env = document.getElementById('env');
+            if (env.classList.contains('open')) return;
+            env.classList.add('open');
+            document.querySelector('.thint').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('cover').classList.add('show');
+                burst();
+            }, 750);
+        }
+
+        function closeCard() {
+            document.getElementById('cover').classList.remove('show');
+            setTimeout(() => {
+                document.getElementById('env').classList.remove('open');
+                document.querySelector('.thint').style.opacity = '1';
+                showPage(1);
+            }, 600);
+        }
+
+        function showPage(n) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.dot').forEach(d => d.classList.remove('on'));
+            cur_page = n;
+            document.getElementById('p' + n).classList.add('active');
+            document.getElementById('d' + n).classList.add('on');
+            document.getElementById('bprev').disabled = (n === 1);
+            document.getElementById('bnext').disabled = (n === total);
+        }
+
+        function go(dir) {
+            const nx = cur_page + dir;
+            if (nx < 1 || nx > total) return;
+            showPage(nx);
+            if (dir > 0) spawnF();
+        }
+
+        const fItems = ['✦', '🌸', '★', '💕', '🧶', '🎨', '⭐', '🌙', '💫', '🐱', '✧', '💌', '🩷', '💗', '🌺'];
+
+        function spawnF() {
+            for (let i = 0; i < 5; i++) setTimeout(() => {
+                const f = document.createElement('div');
+                f.className = 'floaty';
+                f.textContent = fItems[Math.floor(Math.random() * fItems.length)];
+                f.style.left = (15 + Math.random() * 70) + 'vw';
+                f.style.bottom = '18vh';
+                f.style.fontSize = (13 + Math.random() * 14) + 'px';
+                f.style.animationDuration = (3 + Math.random() * 2) + 's';
+                document.body.appendChild(f);
+                setTimeout(() => f.remove(), 5500);
+            }, i * 130);
+        }
+
+        function burst() {
+            for (let i = 0; i < 12; i++) setTimeout(() => spawnF(), i * 80);
+        }
+    </script>
+</body>
+
+</html>
