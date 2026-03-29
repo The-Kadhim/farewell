@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZS9SB7HB1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BZS9SB7HB1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دائِماً، لكِ ✦</title>
@@ -13,13 +22,11 @@
     <div id="sky"></div>
     <canvas id="rain"></canvas>
 
-    <!-- string lights -->
     <svg class="lights" viewBox="0 0 1000 70" preserveAspectRatio="none">
   <path d="M0,15 Q125,42 250,18 Q375,44 500,20 Q625,44 750,18 Q875,42 1000,20"
         fill="none" stroke="rgba(255,150,210,.35)" stroke-width="1.2"/>
 </svg>
 
-    <!-- rainy window -->
     <div class="win">
         <div class="wch"></div>
         <div class="wcv"></div>
@@ -34,7 +41,6 @@
 
     <div class="tbl"></div>
 
-    <!-- TROPHY LEFT (gold) -->
     <div class="trophy-wrap trophy-left">
         <div class="t-star">✦</div>
         <div class="t-star">🌸</div>
@@ -73,7 +79,6 @@
   </svg>
     </div>
 
-    <!-- TROPHY RIGHT (pink) -->
     <div class="trophy-wrap trophy-right">
         <div class="t-star">✦</div>
         <div class="t-star">💕</div>
@@ -112,7 +117,6 @@
   </svg>
     </div>
 
-    <!-- RAGDOLL CAT -->
     <div class="cat-ragdoll">
         <svg width="72" height="82" viewBox="0 0 72 82" fill="none" xmlns="http://www.w3.org/2000/svg">
     <ellipse cx="36" cy="60" rx="22" ry="18" fill="#f0ece8" opacity=".95"/>
@@ -153,7 +157,6 @@
   </svg>
     </div>
 
-    <!-- ORANGE CAT -->
     <div class="cat">
         <svg width="72" height="82" viewBox="0 0 72 82" fill="none" xmlns="http://www.w3.org/2000/svg">
     <ellipse cx="36" cy="60" rx="22" ry="18" fill="#e8803a" opacity=".92"/>
@@ -186,7 +189,6 @@
     <div class="yarn">🧶</div>
     <div class="brush">🖌️</div>
 
-    <!-- glasses -->
     <div class="glass" style="left:35%">
         <div class="gcup"></div>
         <div class="gstem"></div>
@@ -215,10 +217,9 @@
             </div>
             <div class="eseal">💌</div>
         </div>
-        <div class="thint">✦ open me ✦</div>
+        <div class="thint">✦ افتحي الرسالة ✦</div>
     </div>
 
-    <!-- card -->
     <div id="cover">
         <div class="book">
             <button class="closex" onclick="closeCard()">✕</button>
@@ -302,7 +303,6 @@
     </div>
 
     <script>
-        /* ── STARS ── */
         const sky = document.getElementById('sky');
         const starPalette = [{
             sc: '#ffffff',
@@ -344,7 +344,6 @@
             sky.appendChild(sh);
         }
 
-        /* ── STRING LIGHTS ── */
         const svgEl = document.querySelector('svg.lights');
         const bulbData = ['✦', '★', '✧', '🌸', '✦', '💕', '★', '✦', '✧', '💗', '✦', '★', '✧', '✦', '🌸', '★', '✦', '✧', '✦'];
         for (let i = 0; i < 19; i++) {
@@ -364,7 +363,6 @@
             svgEl.appendChild(b);
         }
 
-        /* ── RAIN ── */
         const canvas = document.getElementById('rain');
         const ctx = canvas.getContext('2d');
 
@@ -404,7 +402,6 @@
             requestAnimationFrame(drawRain);
         })();
 
-        /* ── CARD LOGIC ── */
         let cur_page = 1;
         const total = 6;
         const dotsEl = document.getElementById('dots');
